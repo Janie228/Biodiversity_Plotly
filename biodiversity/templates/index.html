@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flask Plotlyjs Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/myStyle.css') }}">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-white text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card mb-2 text-white bg-primary  small">
+          <div class="card-header">
+            <strong>Sample Selection</strong>
+          </div>
+          <div class="card-body">
+            <select id="sel_dataset" onchange="optionChanged(this.value)"></select>
+          </div>
+        </div>
+        <div class="card mb-2 text-primary  small">
+          <div class="card-header text-center">
+            <strong>Sample MetaData</strong>
+          </div>
+          <div id="smpl-meta" class="card-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="pie">
+          <!-- Pie chart -->
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge">
+          <!-- Gauge chart -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 shadow p-3 mb-5">
+      <div id="bubble">
+        <!-- Bubble chart -->
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>
