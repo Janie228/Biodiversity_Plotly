@@ -3,7 +3,7 @@
 function filterData(dataset) {
   dList = [];
  
-  for (i=0; i < 80; i++) { 
+  for (i=0; i < dataset.otu_ids.length; i++) { 
   //  console.log(`ROw${i}]: ${results.otu_ids[i]}, ${results.sample_values[i]}, ${results.otu_labels[i]}`) ;
     dict = {};
     dict["otu_ids"] = dataset.otu_ids[i];
@@ -113,16 +113,19 @@ function buildMetadata(sample) {
 
 // This function build the bubble & pie charts
 function buildCharts(sample) {
+  // Set sample on header
+  d3.select("#sample").html(`SAMPLE # ${sample}`);
+
   // Use `d3.json` to fetch the sample data for the plots
   url = "/samples/" + sample
   d3.json(url).then(function(results) {
     // console.log(results)
     // Build a Bubble Chart using the sample data
-    var trace = {
+    // Default hoverinfo - all
+    var bubble_data = {
       x: results.otu_ids,
       y: results.sample_values,
-      text: results.otu_labels,
-      // hoverinfo: 'all',
+      text: results.otu_labels, 
       mode: "markers",
       marker: {
         color: results.otu_ids,
@@ -131,51 +134,44 @@ function buildCharts(sample) {
       }
     };
     
-    var data = [trace];
-    
-    var layout = {
+    var bubble_layout = {
+      title: "<b>Sample's Bateria Counts</b>",
       hovermode: "closest",
       xaxis: {title: {text: 'OTU ID'}}
     };
     
-    Plotly.newPlot('bubble', data, layout);
+    Plotly.newPlot('bubble', [bubble_data], bubble_layout);
   
     // -------------------------------------------------------------------
     // Build a Pie Chart
     dataset = filterData(results);
     // console.log(dataset);   dataset.map(row => row.otu_labels)
 
-    var trace1 = {
+    // Default hoverinfo - all
+    var pie_data = {
       labels: dataset.map(row => row.otu_ids),
       values: dataset.map(row => row.smpl_values),
       hovertext: dataset.map(row => row.otu_labels),
       type: 'pie'
-    };
+    }
 
-    var data1 = [trace1];
-
-    var layout1 = {
+    var pie_Layout = {
+      title: "<b>Sample's Top 10 Results</b>",
       width: 500,
-      height: 500
-    };
+      height: 500     
+    }
 
-    Plotly.newPlot("pie", data1, layout1);
+    Plotly.newPlot("pie", [pie_data], pie_Layout);
   });
 
 }
 // This function clear all charts & data
 function clearAll(){
-  // clear any existing metadata in `#smpl-meta` panel 
-  d3.select("#smpl-meta").selectAll("*").remove();
+  var divList = ["#pie", "#bubble", "#gauge", "#smpl-meta"];
+  divList.forEach(div => {
+    d3.select(div).selectAll("*").remove();
+  })
 
-  // clear any data in `#bubble` panel 
-  d3.select("#bubble").selectAll("*").remove();
-
-  // clear any data in `#pie` panel 
-  d3.select("#pie").selectAll("*").remove();
-
-  // clear any data in `#gauge` panel 
-  d3.select("#gauge").selectAll("*").remove();
 }
 
 // This function intialize the dashboard

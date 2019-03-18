@@ -16,14 +16,21 @@ html {
     box-sizing: inherit; 
    }
 
+   .sticky-offset { 
+    padding: 18rem 0rem 0rem 0rem; 
+  }
 
   .jumbotron {
-    background-image: url(../img/bacteria_by_filterforgedotcom.jpg);
+    position:relative;
+    background-image: url(../img/bacteria_by_filterforgedotcom.jpg);  /* #000 */
+    opacity: .5;
     background-size: cover;
     height: 100%;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   }
 
+  .navbar {
+    background-color: none}
 
 @media (max-width: 500px) {
   
