@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Flask Plotlyjs Example</title>
+  <title>Biodiversity Dashboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
@@ -13,22 +13,22 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/myStyle.css') }}">
 </head>
 
-<body>
+<body onresize="changeLayout()">
   <div class="container-fluid">
-    <div class="fixed-top">
+    <div id="fixed" class="fixed-top">
       <a class="float-left p-2 bg-black" href="#">
           <img src="{{ url_for('static', filename='img/data_scientist_Profile.png') }}" class="rounded position-absolute"
             alt="Home" width="40" height="40">
       </a>
-      <div class="col-md-12 jumbotron text-white text-center">
-        <h1>Belly Button Biodiversity Dashboard</h1>
+      <div class="col-md-12 col-xs-12 jumbotron text-white text-center">
+        <h1 class="text-responsive">Belly Button Biodiversity Dashboard</h1>
         <p>Use the interactive charts below to explore the dataset</p>
         <h6 id="sample" class="text-primary"></h6>
       </div>
     </div>
-    <div class="sticky-offset">
+    <div id="sticky" class="sticky-offset">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
           <div class="card mb-2 text-white bg-primary small text-center">
             <div class="card-header">
               <strong>Sample Selection</strong>
@@ -44,33 +44,33 @@
             <div id="smpl-meta" class="card-body"></div>
           </div>
         </div>
-        <div class="col-md-10">
-          <div class="row shadow p-3 mb-5">
-            <div class="col-md-6">
-              <div id="pie">
+        <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+          <div class="row shadow mb-5">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+              <div id="pie" class="overflow-auto d-flex justify-content-center">
                 <!-- Pie chart -->
               </div>
             </div>
-            <div class="col-md-6">
-              <div id="gauge">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+              <div id="gauge" class="overflow-auto d-flex justify-content-center">
                 <!-- Gauge chart -->
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 shadow p-3 mb-5">
-              <div id="bubble">
-                <!-- Bubble chart -->
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12 p-3">
+          <div id="bubble" class="shadow mb-5 overflow-auto">
+            <!-- Bubble chart -->
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Footer start -->
+    <!-- Footer start fixed-bottom -->
     <footer>
-      <div class="fixed-bottom text-center text-primary pt-2">
-        <p><strong><i>© 2019 Copyright: Janie Wallace</i></strong></p>
+      <div class="text-center text-primary p-3">
+        <strong><i>© 2019 Copyright: Janie Wallace</i></strong>
       </div>
     </footer>
     <!-- Footer end -->
