@@ -16,10 +16,6 @@ html {
     box-sizing: inherit; 
    }
 
-   .sticky-offset { 
-    padding: 18rem 0rem 0rem 0rem; 
-  }
-
   .jumbotron {
     position:relative;
     background-image: url(../img/bacteria_by_filterforgedotcom.jpg);  /* #000 */
@@ -29,7 +25,47 @@ html {
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   }
 
-@media (max-width: 500px) {
-  
-
+  /* Calculate text size based on port */
+  .text-responsive {
+    font-size: 5vw;
   }
+
+  .sticky-offset { 
+    padding: 15rem 0rem 0rem 0rem; 
+  } 
+
+  footer {
+    margin-top: -15px;
+  }
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+Bootstrap 4 breakpoints
+*/
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {  
+  .sticky-offset { padding: 11rem 0rem 0rem 0rem; } 
+  .text-responsive {font-size: 5vw;}
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {  
+  .sticky-offset { padding: 15rem 0rem 0rem 0rem; } 
+  .text-responsive {font-size: 4vw;}
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) { 
+  .sticky-offset { padding: 15rem 0rem 0rem 0rem; }
+  .text-responsive {font-size: 3vw;} 
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) { 
+  .sticky-offset { padding: 17rem 0rem 0rem 0rem; } 
+  .text-responsive {font-size: 3vw;}
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) { 
+  .sticky-offset { padding: 17rem 0rem 0rem 0rem; } 
+  .text-responsive {font-size: 3vw;}
+}
