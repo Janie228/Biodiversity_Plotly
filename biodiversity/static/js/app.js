@@ -83,7 +83,7 @@ function buildGauge(freq) {
     yaxis: {zeroline:false, showticklabels:false, showgrid: false, range: [-1, 1]}
   };
 
-  Plotly.newPlot('gauge', data, layout);
+  Plotly.newPlot('gauge', data, layout, {responsive: true});
 }
 
 // This function build the gauge chart and display the data
@@ -140,7 +140,7 @@ function buildCharts(sample) {
       xaxis: {title: {text: 'OTU ID'}}
     };
     
-    Plotly.newPlot('bubble', [bubble_data], bubble_layout);
+    Plotly.newPlot("bubble", [bubble_data], bubble_layout, {responsive: true});
   
     // -------------------------------------------------------------------
     // Build a Pie Chart
@@ -161,7 +161,7 @@ function buildCharts(sample) {
       height: 500     
     }
 
-    Plotly.newPlot("pie", [pie_data], pie_Layout);
+    Plotly.newPlot("pie", [pie_data], pie_Layout, {responsive: true});
   });
 
 }
@@ -171,7 +171,6 @@ function clearAll(){
   divList.forEach(div => {
     d3.select(div).selectAll("*").remove();
   })
-
 }
 
 // This function intialize the dashboard
@@ -193,6 +192,8 @@ function init() {
     buildCharts(firstSample);
     buildMetadata(firstSample);
   });
+
+  changeLayout();
 }
 
 // Initialize the dashboard
@@ -207,4 +208,25 @@ function optionChanged(newSample) {
   buildMetadata(newSample);
 }
 
+//  This function remove or add sticky top based on screen size
+function changeLayout(){
+  var sticky = d3.select("#sticky");
+  var fixed = d3.select("#fixed");
 
+  switch(true)
+  {
+    case (window.outerWidth <= 767):
+      if (fixed.attr("class") === "fixed-top"){
+        fixed.classed("fixed-top", false);
+        sticky.classed("sticky-offset", false);
+      }
+      break;
+    case (window.outerWidth >= 768):
+      if (fixed.attr("class") === ""){
+        fixed.classed("fixed-top", true);
+        sticky.classed("sticky-offset", true);
+      } 
+      break;   
+  }
+
+}
