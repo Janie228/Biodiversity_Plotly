@@ -1,4 +1,4 @@
-# [Belly Button Biodiversity Exploration](https://jl-biodiversity.herokuapp.com/)
+# [Biodiversity Exploration](https://jl-biodiversity.herokuapp.com/)
 -----
 
 ![Bacteria by filterforge.com](biodiversity/static/img/bacteria_by_filterforgedotcom.jpg)
