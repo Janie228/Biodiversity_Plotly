@@ -63,7 +63,7 @@ The following task is completely optional and is very advanced.
 
 ## Results
 * [Click here to website](https://jl-biodiversity.herokuapp.com)
-![biodiversity.JPG](static/images/biodiversity.JPG)
+![biodiversity.JPG](biodiversity/static/images/biodiversity.JPG)
 
 - - -
 
