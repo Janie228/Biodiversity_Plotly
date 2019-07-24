@@ -1,9 +1,9 @@
-# [Belly Button Biodiversity](https://jl-biodiversity.herokuapp.com/)
+# [Belly Button Biodiversity Exploration](https://jl-biodiversity.herokuapp.com/)
 -----
 
 ![Bacteria by filterforge.com](biodiversity/static/img/bacteria_by_filterforgedotcom.jpg)
 
-In this assignment, you will build an interactive dashboard to explore the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
+In this project, you will build an interactive dashboard to explore the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
 
 ## Step 1 - Plotly.js
 Use Plotly.js to build interactive charts for your dashboard.
