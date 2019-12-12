@@ -1,4 +1,11 @@
 # [Biodiversity Exploration](https://jl-biodiversity.herokuapp.com/)
+- - -
+
+## Results
+* [Click here to website](https://jl-biodiversity.herokuapp.com)
+
+![biodiversity.JPG](biodiversity/static/img/biodiversity.JPG)
+
 -----
 
 ![Bacteria by filterforge.com](biodiversity/static/img/bacteria_by_filterforgedotcom.jpg)
@@ -59,12 +66,6 @@ The following task is completely optional and is very advanced.
 * Use `console.log` inside of your JavaScript code to see what your data looks like at each step.
 * Refer to the [Plotly.js Documentation](https://plot.ly/javascript/) when building the plots.
 
-- - -
-
-## Results
-* [Click here to website](https://jl-biodiversity.herokuapp.com)
-
-![biodiversity.JPG](biodiversity/static/img/biodiversity.JPG)
 
 - - -
 
