@@ -1,4 +1,4 @@
-# [Biodiversity Exploration](https://jl-biodiversity.herokuapp.com/)
+# [Biodiversity Exploration]
 - - -
 
 ![Bacteria by filterforge.com](biodiversity/static/img/bacteria_by_filterforgedotcom.jpg)
