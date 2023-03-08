@@ -1,5 +1,4 @@
-# [Biodiversity Exploration](https://jl-biodiversity.herokuapp.com/)
-- - -
+
 
 ![Bacteria by filterforge.com](biodiversity/static/img/bacteria_by_filterforgedotcom.jpg)
 
@@ -7,10 +6,6 @@ In this project, you will build an interactive dashboard to explore the [Belly B
 
 
 ## Results
-* [Click here to website](https://jl-biodiversity.herokuapp.com)
-
-![biodiversity.JPG](biodiversity/static/img/biodiversity.JPG)
-
 -----
 
 ## Step 1 - Plotly.js
